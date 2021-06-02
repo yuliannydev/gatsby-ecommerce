@@ -1,29 +1,54 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from "react"
+import { graphql, Link } from "gatsby"
+import { Jumbo, Seo } from "../components"
+import Product from "../components/product"
+//import styled from "@emotion/styled"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+const IndexPage = ({ data }) => {
+  console.log(data)
+  return (
+    <>
+      <Seo title="Home" />
+      <Jumbo
+        description={data.allSite.edges[0].node.siteMetadata.description}
+      />
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+      <Product products={data.allStripePrice.edges} />
+
+      <p>
+        <Link to="/page-2/">Go to page 2</Link> <br />
+      </p>
+    </>
+  )
+}
+
+/* Tiene dos querys */
+
+export const query = graphql`
+  query GET_DATA {
+    allSite {
+      edges {
+        node {
+          siteMetadata {
+            description
+          }
+        }
+      }
+    }
+    allStripePrice {
+      edges {
+        node {
+          id
+          unit_amount
+          product {
+            name
+            description
+            images
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
