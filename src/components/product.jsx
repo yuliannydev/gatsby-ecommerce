@@ -21,7 +21,7 @@ const Product = ({ products }) => {
                      <small>USD{unit_amount}</small>
                      <Link to= {`/${node.id}`}>
                        Comprar ahora
-                       <span>💵</span>
+                       <span> 💵 </span>
                        </Link>
                    </article>
                  )

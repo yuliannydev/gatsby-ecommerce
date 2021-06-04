@@ -18,12 +18,12 @@ const Layout = ({ children }) => (
     <Content>
       <main>{children}</main>
       <Footer>
-        © {new Date().getFullYear()}, Hecho en{" "}
+        © {new Date().getFullYear()}, Hecho en {" "}
         <span rol="img" aria-label="emoji">
           {" "}
-          🇻🇪
+           🇻🇪
         </span>{" "}
-        con mucho{" "}
+        con mucho {" "}
         <span rol="img" aria-label="emoji">
           {" "}
           💛
