@@ -1,9 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
-
 const path = require("path")
 
 //Create product pages
@@ -24,6 +18,9 @@ exports.createPages = async ({ graphql, actions }) => {
               name
               description
               images
+              metadata {
+                wear
+              }
             }
           }
         }
@@ -38,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `${node.id}`,
       component: productTemplateView,
+      context: node,
     })
   })
 }

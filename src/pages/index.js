@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { Jumbo, Seo } from "../components"
-import Product from "../components/product"
+import Product from "../components/products"
 //import styled from "@emotion/styled"
 
 const IndexPage = ({ data }) => {
@@ -44,6 +44,9 @@ export const query = graphql`
             name
             description
             images
+            metadata {
+              wear
+            }
           }
         }
       }

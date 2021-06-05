@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link} from 'gatsby'
-import Formatprice from '../utils/priceFormat'
+import priceFormat from '../utils/priceFormat'
 import { StyledProducts } from '../styles/componensts'
 
 
-const Product = ({ products }) => {
+const Products = ({ products }) => {
     console.log(products);
     return (
         <StyledProducts>
             <h2>Productos</h2>
             <section>
                {products.map(({node}) => {
-                 const unit_amount = Formatprice(node.unit_amount)
+                 const unit_amount = priceFormat(node.unit_amount)
                  return (
                    <article key={node.id}>
                      <img 
@@ -32,4 +32,4 @@ const Product = ({ products }) => {
     )
 }
 
-export default Product
+export default Products

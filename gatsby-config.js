@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Raydesite E-commerce`,
-    description: `Un E-commerce para toda la Comunidad Tech`,
+    title: `Platzi E-commerce`,
+    description: `Un E-commerce para toda la Comunidad de Platzi`,
     author: `@yuliannydev`,
   },
   plugins: [
