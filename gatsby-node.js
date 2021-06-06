@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   //Template
-  const productTemplateView = path.resolve(`src/templates/productView.jsx`)
+  const productTemplateView = path.resolve(`src/templates/productView.js`)
 
   const result = await graphql(`
     query GET_PRICE {

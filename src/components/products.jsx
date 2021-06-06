@@ -5,7 +5,6 @@ import { StyledProducts } from '../styles/componensts'
 
 
 const Products = ({ products }) => {
-    console.log(products);
     return (
         <StyledProducts>
             <h2>Productos</h2>

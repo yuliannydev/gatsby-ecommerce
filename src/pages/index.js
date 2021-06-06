@@ -5,7 +5,6 @@ import Product from "../components/products"
 //import styled from "@emotion/styled"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
   return (
     <>
       <Seo title="Home" />

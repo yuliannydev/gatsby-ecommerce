@@ -3,27 +3,30 @@ import priceFormat from '../utils/priceFormat'
 import { 
     Tag, 
     SizeButton, 
-    QtyButton, 
     SizeSelect, 
     QtySelect, 
-    Button, 
-    StyledProductDetail 
+    StyledProductDetail, 
+    Button
 } from '../styles/componensts'
-import { Seo } from './seo'
+import { Seo, Starts } from './'
 
 
-const productDetail = ({ unit_amount: price, id, product: {name, /* image, */ metadata }}) => {
+const productDetail = ({ unit_amount: price, product: {name, description, images, metadata }}) => {
     const formatPrice = priceFormat(price)
     const [size, setSize] = useState(2)
     const [qty, setQty] = useState(1)
     return (
         <StyledProductDetail>
             <Seo title={name} />
-            {/* <img title={image} /> */}
+             <img src={images} alt={name} /> 
             <div>
                 <Tag>Popular</Tag>
-                <h2>{name}</h2>
-                <b>USD{formatPrice}</b>
+                <h1>{name}</h1>
+                <b>{formatPrice}</b>
+                <Starts/>
+                {/* {metadata.wear && <h3>Color: </h3>} */}
+                <small>{description}</small>
+
                 {metadata.wear && (
                     <SizeSelect select={size}>
                         <SizeButton onClick={() => setSize(1)}>XS</SizeButton>
@@ -33,13 +36,15 @@ const productDetail = ({ unit_amount: price, id, product: {name, /* image, */ me
                         <SizeButton onClick={() => setSize(5)}>XL</SizeButton>
                     </SizeSelect>
                 )}
-                <p>Cantidad:</p>
+                <h4>Quantity:</h4>
 
                 <QtySelect>
                     <button onClick={() => (qty > 1 ? setQty(qty-1): null)}>-</button>
                     <input type='text' disabled value={qty} />
                     <button onClick={() => setQty(qty + 1)}>+</button>
                 </QtySelect>
+
+                <Button>Add to cart 🛒</Button>
             </div>
         </StyledProductDetail>
     )
