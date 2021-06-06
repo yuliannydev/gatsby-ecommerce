@@ -8,7 +8,7 @@ import {
     StyledProductDetail, 
     Button
 } from '../styles/componensts'
-import { Seo, Starts } from './'
+import { Seo, Starts } from '.'
 
 
 const productDetail = ({ unit_amount: price, product: {name, description, images, metadata }}) => {
