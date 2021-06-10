@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { Jumbo, Seo } from "../components"
 import Product from "../components/products"
 //import styled from "@emotion/styled"
@@ -13,10 +13,6 @@ const IndexPage = ({ data }) => {
       />
 
       <Product products={data.allStripePrice.edges} />
-
-      <p>
-        <Link to="/page-2/">Go to page 2</Link> <br />
-      </p>
     </>
   )
 }

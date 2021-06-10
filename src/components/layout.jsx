@@ -12,6 +12,7 @@ import Header from "./header"
 import "./layout.css"
 import { Content, Footer } from "../styles/componensts"
 
+
 const Layout = ({ children }) => (
   <>
     <Header />
