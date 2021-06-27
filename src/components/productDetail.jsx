@@ -49,7 +49,7 @@ const productDetail = ({ unit_amount: price, id, product: {name, description, im
                 <h4>Quantity:</h4>
 
                 <QtySelect>
-                    <button onClick={() => (qty > 1 ? setQty(qty-1): null)}>-</button>
+                    <button onClick={() => (qty > 1 ? setQty(qty-0): null)}>-</button>
                     <input type='text' disabled value={qty} />
                     <button onClick={() => setQty(qty + 1)}>+</button>
                 </QtySelect>

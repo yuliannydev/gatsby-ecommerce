@@ -30,15 +30,16 @@ const CartView = () => {
 
         event.preventDefault()
 
-        let items = cart.map(({ id, quantity }) => ({
-            price: id,
-            quantity,
+        let items = cart.map(({id, quantity}) => ({
+            price: id, 
+            quantity: 1,
         }))
 
+ 
         const { error } = await stripe.redirectToCheckout({
             
             lineItems: items,
-            mode: "payment",
+            mode: "subscription",
             successUrl: process.env.SUCCESS_REDIRECT,
             cancelUrl: process.env.CANCEL_REDIRECT,
         })
@@ -83,7 +84,7 @@ const CartView = () => {
                    <Link to='/'>
                        <Button type='outline'>Back</Button>
                    </Link>
-                   <Button onClick={handleSubmit} disabled={cart.length === 0 }>Buy</Button>
+                   <Button onClick={handleSubmit} /* disabled={cart.length === 0 } */>Buy</Button>
                </div>
            </nav>
         </StyledCart>
