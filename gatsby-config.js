@@ -39,6 +39,7 @@ module.exports = {
       options: {
         // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
         // The values for each key in this example are the defaults the plugin uses.
+        //Quitar la configuracion de desarrollo
         sourceMap: true,
         autoLabel: "dev-only",
         labelFormat: `[local]`,
@@ -55,7 +56,7 @@ module.exports = {
     {
       resolve: `gatsby-source-stripe`,
       options: {
-        objects: ["Price", "Product"],
+        objects: ["Price"],
         secretKey: process.env.STRIPE_SK,
       },
     },

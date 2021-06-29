@@ -8,11 +8,11 @@ const Jumbo = ({ description }) => {
   return (
     <StyledJumbo>
       <div>
-        <h2>¿Desea tomar una tazita de Café?</h2>
-        <small>{description}</small>
+        <h2>Platzi E-commerce</h2>
+        <p>{description}</p>
       </div>
       {/*     <GatsbyImage image={image} alt={data.image.get_image} /> */}
-      <StaticImage src="../images/mug.png" alt="Banner" placeholder="blurred" />
+      <StaticImage src="../images/icon.png" alt="Banner" placeholder="blurred" />
     </StyledJumbo>
   )
 }

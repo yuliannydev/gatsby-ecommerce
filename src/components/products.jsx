@@ -7,7 +7,7 @@ import { StyledProducts } from '../styles/componensts'
 const Products = ({ products }) => {
     return (
         <StyledProducts>
-            <h2>Productos</h2>
+            <h2>Products</h2>
             <section>
                {products.map(({node}) => {
                  const unit_amount = priceFormat(node.unit_amount)
@@ -19,7 +19,7 @@ const Products = ({ products }) => {
                      <p>{node.product.name}</p>
                      <small>USD{unit_amount}</small>
                      <Link to= {`/${node.id}`}>
-                       Comprar ahora
+                       Buy now
                        <span> 💵 </span>
                        </Link>
                    </article>

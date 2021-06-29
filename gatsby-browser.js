@@ -5,5 +5,10 @@
  */
 import React from "react"
 import Layout from "./src/components/layout"
+import { CartProvider } from "./src/context"
 
-export const wrapRootElement = ({ element }) => <Layout>{element}</Layout>
+export const wrapRootElement = ({ element }) => (
+  <CartProvider>
+    <Layout>{element}</Layout>
+  </CartProvider>
+)
